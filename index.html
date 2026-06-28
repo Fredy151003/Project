@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kopi Senja – Cafe & Roastery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F7F3EE;
+      --dark: #1A1612;
+      --brown: #6B4C2A;
+      --sand: #C9A87C;
+      --muted: #8C7B6B;
+      --white: #FFFFFF;
+      --ff-display: 'Playfair Display', serif;
+      --ff-body: 'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--dark);
+      font-family: var(--ff-body);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 5vw;
+      background: rgba(247,243,238,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(107,76,42,0.1);
+    }
+
+    .nav-logo {
+      font-family: var(--ff-display);
+      font-size: 1.3rem;
+      color: var(--brown);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--brown); }
+
+    /* HERO */
+ .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:80px 8%;
+    overflow:hidden;
+}
+
+.hero-video{
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:-2;
+}
+.overlay{
+    position:absolute;
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    z-index:-1;
+}
+.hero-content{
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+max-width:650px;
+
+}
+
+.hero-subtitle{
+
+letter-spacing:5px;
+
+font-size:.8rem;
+
+color:#D9B27A;
+
+margin-bottom:20px;
+
+}
+
+.hero h1{
+
+font-size:72px;
+
+font-family:'Playfair Display',serif;
+
+color:white;
+
+line-height:1.05;
+
+margin-bottom:25px;
+
+}
+
+.hero h1 span{
+
+color:#d7a96d;
+
+}
+
+.hero-text{
+
+color:#eee;
+
+font-size:18px;
+
+line-height:1.9;
+
+margin-bottom:45px;
+
+max-width:550px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:20px;
+
+}
+
+.btn-primary{
+
+background:#B88653;
+
+padding:18px 40px;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:50px;
+
+transition:.4s;
+
+}
+
+.btn-primary:hover{
+
+background:#8d6034;
+
+transform:translateY(-3px);
+
+}
+
+.btn-secondary{
+
+border:1px solid rgba(255,255,255,.5);
+
+padding:18px 40px;
+
+border-radius:50px;
+
+color:white;
+
+text-decoration:none;
+
+transition:.4s;
+
+}
+
+.btn-secondary:hover{
+
+background:white;
+
+color:black;
+
+}
+
+.scroll-down{
+
+position:absolute;
+
+bottom:30px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+z-index:5;
+
+}
+
+.scroll-down span{
+
+display:block;
+
+width:25px;
+
+height:45px;
+
+border:2px solid white;
+
+border-radius:50px;
+
+position:relative;
+
+}
+
+.scroll-down span::before{
+
+content:"";
+
+position:absolute;
+
+top:8px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:5px;
+
+height:8px;
+
+background:white;
+
+border-radius:20px;
+
+animation:scroll 1.5s infinite;
+
+}
+
+@keyframes 
+scroll{0%{opacity:0;transform:translate(-50%,0);}
+50%{opacity:1;}100%{opacity:0;transform:translate(-50%,15px);}
+
+}
+
+    /* ABOUT STRIP */
+    .strip {
+      background: var(--brown);
+      color: var(--white);
+      padding: 1.25rem 8vw;
+      display: flex;
+      gap: 4rem;
+      align-items: center;
+      overflow-x: auto;
+    }
+
+    .strip-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      white-space: nowrap;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.9;
+    }
+
+    .strip-dot { width: 4px; height: 4px; background: var(--sand); border-radius: 50%; flex-shrink: 0; }
+
+    /* MENU */
+    .section { padding: 6rem 8vw; }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--dark);
+      margin-bottom: 3rem;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: rgba(107,76,42,0.1);
+    }
+
+    .menu-card {
+      background: var(--cream);
+      padding: 2rem;
+      transition: background 0.2s;
+      cursor: default;
+    }
+
+    .menu-card:hover { background: var(--white); }
+
+    .menu-card-tag {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 0.75rem;
+    }
+
+    .menu-card-name {
+      font-family: var(--ff-display);
+      font-size: 1.25rem;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .menu-card-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .menu-card-price {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--brown);
+    }
+
+    /* STORY */
+    
+.about{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+    padding: 120px 8%;
+
+    background: url("kopi8.jpg") center center / cover no-repeat;
+}
+
+about::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,0.65);
+}
+
+.about > *{
+    position: relative;
+    z-index: 2;
+}
+.about-image{
+
+overflow:hidden;
+
+border-radius:20px;
+
+}
+
+.about-image img{
+
+width:100%;
+
+height:650px;
+
+object-fit:cover;
+
+transition:.6s;
+
+}
+
+.about-image:hover img{
+
+transform:scale(1.08);
+
+}
+
+.about-content span{
+
+letter-spacing:5px;
+
+color:#b88653;
+
+}
+
+.about-content h2{
+font-size:55px;
+margin:20px 0;
+font-family:'Playfair Display';
+
+}
+
+.about-content p{
+
+line-height:2;
+
+color:#ffffff;
+
+margin-bottom:40px;
+
+}
+
+.about-box{
+
+display:flex;
+
+gap:50px;
+
+}
+
+.about-box h3{
+
+font-size:42px;
+
+color:#b88653;
+
+font-family:'Playfair Display';
+
+}
+
+    /* HOURS */
+    .hours { padding: 6rem 8vw; }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5px;
+      background: rgba(107,76,42,0.1);
+      max-width: 600px;
+    }
+
+    .hours-cell {
+      background: var(--cream);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hours-day { font-size: 0.85rem; color: var(--muted); }
+    .hours-time { font-size: 0.85rem; color: var(--dark); font-weight: 500; }
+
+    /* CTA */
+    .cta {
+      background: var(--brown);
+      color: var(--white);
+      padding: 5rem 8vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .cta-title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      max-width: 480px;
+      line-height: 1.3;
+    }
+
+    .cta-title em { color: var(--sand); font-style: italic; }
+
+    .btn-light {
+      background: var(--cream);
+      color: var(--brown);
+      padding: 0.9rem 2.2rem;
+      border: none;
+      cursor: pointer;
+      font-family: var(--ff-body);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+
+    .btn-light:hover { background: var(--white); }
+
+    /* FOOTER */
+    footer{
+
+background:#111;
+
+padding:80px 8% 20px;
+
+color:white;
+
+}
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:50px;
+
+}
+
+.footer-grid h3{
+
+font-size:35px;
+
+font-family:'Playfair Display';
+
+margin-bottom:20px;
+
+}
+
+.footer-grid h4{
+
+margin-bottom:20px;
+
+}
+
+.footer-grid a{
+
+display:block;
+
+color:#aaa;
+
+text-decoration:none;
+
+margin-bottom:12px;
+
+transition:.3s;
+
+}
+
+.footer-grid a:hover{
+
+color:#b88653;
+
+}
+
+.copyright{
+
+  text-align:center;
+
+  padding-top:50px;
+
+  border-top:1px solid rgba(255,255,255,.1);
+
+  margin-top:50px;
+
+  color:#777;
+
+}
+
+    /* RESPONSIVE */
+    @media 
+    (max-width: 768px) {
+        .hero { grid-template-columns: 1fr; }
+        .hero-image { height: 300px; }
+        .hero-text { padding: 4rem 6vw; }
+        .menu-grid { grid-template-columns: 1fr; }
+        .story { grid-template-columns: 1fr; gap: 3rem; }
+        .story-year { bottom: -1rem; right: 0; }
+        .cta { flex-direction: column; text-align: center; }
+        .hours-grid { grid-template-columns: 1fr; }
+        .nav-links { display: none; }
+      }
+
+    /* FADE IN */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .gallery{
+
+      padding:100px 8%;
+
+      background:#faf7f2;
+
+      }
+
+.section-header{
+
+  text-align:center;
+
+  margin-bottom:60px;
+
+  }
+
+.section-header p{
+
+letter-spacing:5px;
+
+color:#b88653;
+
+font-size:.8rem;
+
+margin-bottom:15px;
+
+}
+
+.section-header h2{
+
+font-family:'Playfair Display',serif;
+
+font-size:46px;
+
+}
+
+.gallery-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
+
+.gallery-item{
+
+overflow:hidden;
+
+border-radius:15px;
+
+}
+
+.gallery-item img{
+
+width:100%;
+
+height:350px;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+.gallery-item:hover img{
+
+transform:scale(1.12);
+
+}
+.premium-menu{
+    padding:100px 8%;
+
+  background-image:
+linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+url("kopi6.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+.premium-menu h2{
+
+text-align:center;
+color: whitesmoke;
+font-size:48px;
+
+margin-bottom:60px;
+
+font-family:'Playfair Display';
+
+}
+
+.menu-wrapper{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:40px;
+
+}
+
+.food{
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+transition:.4s;
+
+background:white;
+
+}
+
+.food:hover{
+
+transform:translateY(-10px);
+
+}
+
+.food img{
+
+width:100%;
+
+height:300px;
+
+object-fit:cover;
+
+}
+
+.food h3{
+
+padding:20px 20px 10px;
+
+font-size:28px;
+
+}
+
+.food p{
+
+padding:0 20px;
+
+color:gray;
+
+}
+
+.food span{
+
+  display:block;
+
+  padding:20px;
+
+  font-size:22px;
+
+  color:#b88653;
+
+  font-weight:bold;
+
+}
+.testimonial{
+
+padding:120px 8%;
+
+background:#1b1815;
+
+text-align:center;
+
+color:white;
+
+}
+
+.testimonial h2{
+
+font-size:50px;
+
+font-family:'Playfair Display';
+
+margin-bottom:40px;
+
+}
+
+.review{
+
+max-width:700px;
+
+margin:auto;
+
+}
+
+.review p{
+
+font-size:22px;
+
+line-height:1.8;
+
+margin-bottom:30px;
+
+}
+
+.review h4{
+
+  font-size:32px;
+
+  color:#d6a76d;
+
+  margin-bottom:15px;
+
+}
+nav{
+
+position:fixed;
+
+width:100%;
+
+top:0;
+
+left:0;
+
+padding:25px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:transparent;
+
+transition:.4s;
+
+z-index:999;
+
+}
+
+nav.scrolled{
+
+  background:white;
+
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+.booking{
+
+padding:150px 8%;
+
+background:url(images/reservasi.jpg) center/cover;
+
+position:relative;
+
+}
+
+.booking::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:rgba(0,0,0,.55);
+
+}
+
+.booking-content{
+
+position:relative;
+
+z-index:2;
+
+text-align:center;
+
+color:white;
+
+}
+
+.booking h2{
+
+font-size:60px;
+
+font-family:'Playfair Display';
+
+margin-bottom:20px;
+
+}
+
+.booking p{
+
+font-size:20px;
+
+margin-bottom:40px;
+
+}
+
+.booking a{
+
+    background:#b88653;
+
+    padding:18px 45px;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:40px;
+
+}
+@media(max-width:900px){
+
+.hero h1{
+
+font-size:50px;
+
+}
+
+.about{
+
+grid-template-columns:1fr;
+
+}
+
+.gallery-grid{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+.menu-wrapper{
+
+grid-template-columns:1fr;
+
+}
+
+.footer-grid{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.about-box{
+
+justify-content:center;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.gallery-grid{
+
+grid-template-columns:1fr;
+
+}
+
+  .about-image img{
+
+  height:350px;
+
+  }
+
+}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Kopi Senja</div>
+    <ul class="nav-links">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#story">Tentang Kami</a></li>
+      <li><a href="#visit">Kunjungi</a></li>
+    </ul>
+  </nav>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav id="navbar">
+    <div class="nav-logo">Kopi Senja</div>
+
+    <ul class="nav-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#story">Tentang</a></li>
+        <li><a href="#gallery">Galeri</a></li>
+        <li><a href="#visit">Lokasi</a></li>
+    </ul>
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+  <video class="hero-video" autoplay muted loop playsinline>
+        <source src="kopi.mp4" type="video/mp4">
+        Browser Anda tidak mendukung video.
+    </video>
+
+<div class="overlay"></div>
+
+<div class="hero-content fade-in">
+
+<p class="hero-subtitle">EST. 2019 • COFFEE & ROASTERY</p>
+
+<h1>
+Nikmati secangkir kopi<br>
+yang dibuat dengan<br>
+<span>sepenuh hati.</span>
+</h1>
+
+<p class="hero-text">
+Kami menyajikan biji kopi pilihan dari berbagai daerah di Indonesia,
+diproses oleh barista profesional dengan cita rasa yang konsisten.
+Temukan tempat ternyaman untuk bekerja, berbincang,
+atau sekadar menikmati sore.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#menu" class="btn-primary">
+Lihat Menu
+</a>
+
+<a href="#story" class="btn-secondary">
+Tentang Kami
+</a>
+
+</div>
+
+</div>
+
+<div class="scroll-down">
+
+<span></span>
+
+</div>
+
+</section>
+
+  <!-- STRIP -->
+  <div class="strip">
+    <div class="strip-item"><span class="strip-dot"></span> Single Origin Beans</div>
+    <div class="strip-item"><span class="strip-dot"></span> Pour Over & Espresso</div>
+    <div class="strip-item"><span class="strip-dot"></span> Homemade Pastry</div>
+    <div class="strip-item"><span class="strip-dot"></span> Roastery On-Site</div>
+    <div class="strip-item"><span class="strip-dot"></span> Free WiFi</div>
+  </div>
+
+  <!-- MENU -->
+  <section class="premium-menu" id="menu">
+
+<h2>Menu Favorit</h2>
+
+<div class="menu-wrapper">
+
+<div class="food">
+
+<img src="latte.jpg">
+
+<h3>Senja Latte</h3>
+
+<p>Espresso • Fresh Milk • Caramel</p>
+
+<span>Rp38.000</span>
+
+</div>
+
+<div class="food">
+
+<img src="cold-brew.jpg">
+
+<h3>Cold Brew</h3>
+
+<p>18 Jam Brewing</p>
+
+<span>Rp42.000</span>
+
+</div>
+
+<div class="food">
+
+<img src="croissant1.jpg">
+
+<h3>Croissant Butter</h3>
+
+<p>Fresh From Oven</p>
+
+<span>Rp28.000</span>
+
+</div>
+
+</div>
+
+</section>
+
+  <!-- STORY -->
+  <section class="about" id="story">
+
+    <div class="about-image">
+        <img src="kopi2.jpg" alt="Cafe">
+    </div>
+
+    <div class="about-content">
+
+        <span>OUR STORY</span>
+
+        <h2>
+            Lebih dari sekadar secangkir kopi.
+        </h2>
+
+        <p>
+            Kopi Senja hadir sejak 2019 dengan satu tujuan sederhana,
+            yaitu menghadirkan kopi berkualitas tinggi dari petani lokal
+            Indonesia dalam suasana yang hangat dan nyaman.
+
+            Kami percaya bahwa setiap cangkir kopi memiliki cerita,
+            mulai dari proses panen hingga akhirnya tersaji di meja Anda.
+        </p>
+
+        <div class="about-box">
+
+            <div>
+                <h3>20+</h3>
+                <p>Jenis Kopi</p>
+            </div>
+
+            <div>
+                <h3>8K+</h3>
+                <p>Pelanggan</p>
+            </div>
+
+            <div>
+                <h3>4.9</h3>
+                <p>Rating</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+  <!-- HOURS -->
+  <section class="hours" id="visit">
+    <p class="section-label fade-in">Jam Operasional</p>
+    <h2 class="section-title fade-in">Kami buka hampir setiap hari</h2>
+    <div class="hours-grid fade-in">
+      <div class="hours-cell"><span class="hours-day">Senin – Jumat</span><span class="hours-time">07.00 – 22.00</span></div>
+      <div class="hours-cell"><span class="hours-day">Sabtu</span><span class="hours-time">08.00 – 23.00</span></div>
+      <div class="hours-cell"><span class="hours-day">Minggu</span><span class="hours-time">08.00 – 21.00</span></div>
+      <div class="hours-cell"><span class="hours-day">Hari Libur</span><span class="hours-time">09.00 – 20.00</span></div>
+    </div>
+    <p style="margin-top: 2rem; color: var(--muted); font-size: 0.85rem;">📍 Jl. Tipar Cakung &nbsp;|&nbsp; ☎ (021) 7890-1234</p>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2 class="cta-title">Pesan meja sekarang, nikmati <em>ketenangan</em> hari ini.</h2>
+    <a href="#" class="btn-light">Reservasi Sekarang</a>
+  </section>
+
+<!--Testimoni-->
+<section class="testimonial">
+
+<h2>Apa kata pelanggan?</h2>
+
+<div class="review">
+
+<p>
+
+"Kopi terbaik yang pernah saya coba.
+Tempatnya tenang, nyaman, dan sangat estetik."
+
+</p>
+
+<h4>★★★★★</h4>
+
+<span>- Andi Saputra</span>
+
+</div>
+
+</section>
+
+<!--Booking-->
+<section class="booking">
+
+<div class="booking-content">
+
+<h2>
+
+Reservasi Meja
+
+</h2>
+
+<p>
+
+Nikmati pengalaman minum kopi terbaik bersama keluarga,
+teman ataupun pasangan.
+
+</p>
+
+<a href="#">
+
+Booking Sekarang
+
+</a>
+
+</div>
+
+</section>
+
+  <!-- FOOTER -->
+  <footer>
+
+<div class="footer-grid">
+
+<div>
+
+<h3>Kopi Senja</h3>
+
+<p>
+
+Coffee • Roastery • Bakery
+
+</p>
+
+</div>
+
+<div>
+
+<h4>Menu</h4>
+
+<a href="#">Coffee</a>
+
+<a href="#">Pastry</a>
+
+<a href="#">Dessert</a>
+
+</div>
+
+<div>
+
+<h4>Kontak</h4>
+
+<p>Jakarta Timur</p>
+
+<p>0812-3456-7890</p>
+
+<p>kopisenja@email.com</p>
+
+</div>
+
+<div>
+
+<h4>Sosial Media</h4>
+
+<a href="#">Instagram</a>
+
+<a href="#">TikTok</a>
+
+<a href="#">Facebook</a>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+©2026 Kopi Senja. All Rights Reserved.
+
+</div>
+
+</footer>
+
+  <script>
+    // Fade in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) {
+          el.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+  <script>
+
+window.addEventListener("scroll",function(){
+
+const nav=document.querySelector("nav");
+
+nav.classList.toggle("scrolled",window.scrollY>100);
+
+});
+
+</script>
+</body>
+</html>
