@@ -380,10 +380,11 @@ about::before{
     background:rgba(255,255,255,0.65);
 }
 
-.about > *{
+.about > {
     position: relative;
     z-index: 2;
 }
+
 .about-image{
 
 overflow:hidden;
@@ -427,13 +428,13 @@ font-family:'Playfair Display';
 
 .about-content p{
 
-line-height:2;
+  line-height:2;
 
-color:#ffffff;
+  color:#916243;
 
-margin-bottom:40px;
+  margin-bottom:40px;
 
-}
+  }
 
 .about-box{
 
@@ -475,6 +476,46 @@ font-family:'Playfair Display';
     .hours-day { font-size: 0.85rem; color: var(--muted); }
     .hours-time { font-size: 0.85rem; color: var(--dark); font-weight: 500; }
 
+    .hours-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+  }
+
+.hours-info{
+    flex:1;
+}
+
+.map-box{
+    flex:1;
+}
+
+.map-box iframe{
+    width:100%;
+    height:420px;
+    border:none;
+    border-radius:18px;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.hours-address{
+    margin-top:2rem;
+    color:var(--muted);
+    font-size:.9rem;
+}
+@media
+(max-width:900px){
+
+.hours-container{
+    flex-direction:column;
+}
+
+.map-box{
+    width:100%;
+}
+
+}
     /* CTA */
     .cta {
       background: var(--brown);
@@ -852,71 +893,7 @@ nav.scrolled{
   box-shadow:0 10px 30px rgba(0,0,0,.08);
 
 }
-.booking{
 
-padding:150px 8%;
-
-background:url(images/reservasi.jpg) center/cover;
-
-position:relative;
-
-}
-
-.booking::before{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:rgba(0,0,0,.55);
-
-}
-
-.booking-content{
-
-position:relative;
-
-z-index:2;
-
-text-align:center;
-
-color:white;
-
-}
-
-.booking h2{
-
-font-size:60px;
-
-font-family:'Playfair Display';
-
-margin-bottom:20px;
-
-}
-
-.booking p{
-
-font-size:20px;
-
-margin-bottom:40px;
-
-}
-
-.booking a{
-
-    background:#b88653;
-
-    padding:18px 45px;
-
-    color:white;
-
-    text-decoration:none;
-
-    border-radius:40px;
-
-}
 @media(max-width:900px){
 
 .hero h1{
@@ -1162,17 +1139,50 @@ Tentang Kami
 </section>
 
   <!-- HOURS -->
-  <section class="hours" id="visit">
-    <p class="section-label fade-in">Jam Operasional</p>
-    <h2 class="section-title fade-in">Kami buka hampir setiap hari</h2>
-    <div class="hours-grid fade-in">
-      <div class="hours-cell"><span class="hours-day">Senin – Jumat</span><span class="hours-time">07.00 – 22.00</span></div>
-      <div class="hours-cell"><span class="hours-day">Sabtu</span><span class="hours-time">08.00 – 23.00</span></div>
-      <div class="hours-cell"><span class="hours-day">Minggu</span><span class="hours-time">08.00 – 21.00</span></div>
-      <div class="hours-cell"><span class="hours-day">Hari Libur</span><span class="hours-time">09.00 – 20.00</span></div>
+<section class="hours" id="visit">
+  <div class="hours-container">
+
+    <!-- Kiri -->
+    <div class="hours-info">
+      <p class="section-label fade-in">Jam Operasional</p>
+      <h2 class="section-title fade-in">Kami buka hampir setiap hari</h2>
+
+      <div class="hours-grid fade-in">
+        <div class="hours-cell">
+          <span class="hours-day">Senin – Jumat</span>
+          <span class="hours-time">07.00 – 22.00</span>
+        </div>
+
+        <div class="hours-cell">
+          <span class="hours-day">Sabtu</span>
+          <span class="hours-time">08.00 – 23.00</span>
+        </div>
+
+        <div class="hours-cell">
+          <span class="hours-day">Minggu</span>
+          <span class="hours-time">08.00 – 21.00</span>
+        </div>
+
+        <div class="hours-cell">
+          <span class="hours-day">Hari Libur</span>
+          <span class="hours-time">09.00 – 20.00</span>
+        </div>
+      </div>
+
+      <p class="hours-address">
+        📍 Jl. Tipar Cakung &nbsp; | &nbsp; ☎ (021) 7890-1234
+      </p>
     </div>
-    <p style="margin-top: 2rem; color: var(--muted); font-size: 0.85rem;">📍 Jl. Tipar Cakung &nbsp;|&nbsp; ☎ (021) 7890-1234</p>
-  </section>
+
+    <!-- Kanan -->
+    <div class="map-box fade-in">
+      <iframe
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.698767496831!2d106.93239547453047!3d-6.171073560473113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698adfc503c117%3A0x61cd9ba33a82ffca!2sJakarta%20Timur%2C%20RW.8%2C%20Cakung%20Bar.%2C%20Kec.%20Cakung%2C%20Kota%20Jakarta%20Timur%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2013910!5e0!3m2!1sid!2sid!4v1782655663120!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </iframe>
+    </div>
+
+  </div>
+</section>
 
   <!-- CTA -->
   <section class="cta">
@@ -1202,33 +1212,7 @@ Tempatnya tenang, nyaman, dan sangat estetik."
 
 </section>
 
-<!--Booking-->
-<section class="booking">
 
-<div class="booking-content">
-
-<h2>
-
-Reservasi Meja
-
-</h2>
-
-<p>
-
-Nikmati pengalaman minum kopi terbaik bersama keluarga,
-teman ataupun pasangan.
-
-</p>
-
-<a href="#">
-
-Booking Sekarang
-
-</a>
-
-</div>
-
-</section>
 
   <!-- FOOTER -->
   <footer>
